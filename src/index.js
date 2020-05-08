@@ -33,7 +33,7 @@ app.use((req, res, next)=>{
 //Rutas
 app.use(require('./routes/'));
 app.use(require('./routes/authentication'));
-app.use('pagos', require('./routes/pagos'));
+app.use('/pagos', require('./routes/pagos'));
 
 //Public
 app.use(express.static(path.join(__dirname, 'public')))
