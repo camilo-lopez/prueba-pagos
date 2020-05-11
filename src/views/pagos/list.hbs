@@ -1,0 +1,27 @@
+<div class="containter p-4">
+    Mostrando pagos correspondientes a: {{user.nombre}}
+    <div class="row">
+        {{#each pagos}}
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href=""> 
+                            <h3 class="card-title text-uppercase"> 
+                               ${{total}}
+                            </h3>
+                        </a>
+                        <p> {{item}}  </p>
+                        <a href="/pagos/delete/{{id}}" class=" btn btn-danger"> Eliminar </a>
+                        <a href="/pagos/edit/{{id}}" class=" btn btn-secondary"> Editar </a>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No tienes pagos</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

@@ -5,10 +5,39 @@
                 <div class="card-body">
                     <form action="/pagos/add" method="POST">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="region" placeholder="Region" />
+                            <input type="text" class="form-control" name="region" placeholder="Región" />
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="proyecto" name="proyecto">
+                                <option value="0">Seleccione...</option>
+                                {{#each proyecto}}
+                                <option value="{{id}}">{{nombre}}</option>
+                                {{/each}}
+                            </select>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" name="item" placeholder="Item" />
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control monto" id="valorencuesta" name="valorencuesta" placeholder="Valor Encuesta"  />
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control monto" id="numeroencuesta" name="numeroencuesta" placeholder="Número Encuesta" onkeyup="multiplicar()" />
+                        </div>
+                         <div class="form-group">
+                            <input type="number" class="form-control" name="total" id="total" placeholder="Total" />
+                        </div>
+                         <div class="form-group">
+                            <input type="number" class="form-control" name="bruto" id="bruto" placeholder="Bruto" />
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="impuesto" id="impuesto" placeholder="Impuesto" />
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="neto" id="neto" placeholder="Neto" />
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="totalPagar" id="totalPagar" placeholder="Total a pagar" />
                         </div>
                         <div class="form-group">
                             <button class="btn btn-success btn-block"> Guardar </button>
@@ -19,3 +48,23 @@
         </div>
     </div>
 </div>
+<script>
+    
+    function multiplicar() {
+        var total = 0;  
+        var vencuesta = $("#valorencuesta").val();
+        var nencuesta = $("#numeroencuesta").val();
+        var nvencuesta = parseInt (vencuesta);
+        var nnencuesta = parseInt (nencuesta);
+        total = (nvencuesta * nnencuesta);
+        $("#total").val(total);
+        $("#bruto").val(total);
+        var neto = 0;
+        neto = (total * 10.75)/100
+        $("#impuesto").val(neto);
+        var totalpagar = (total - neto);  
+        $("#neto").val(totalpagar);
+        $("#totalPagar").val(totalpagar);
+    }
+
+</script>
