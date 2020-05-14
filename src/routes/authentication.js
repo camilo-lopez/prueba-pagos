@@ -28,7 +28,7 @@ router.post('/login',isNotLoggedIn, (req, res, next)=>{
 
 
 router.get('/profile', isLoggedIn, (req, res)=> {
-    res.send('Es tu perfil')
+    res.send('Si ves esto es porque funciona la vista de perfil')
 });
 
 router.get('/logout',isLoggedIn, (req, res)=> {

@@ -8,7 +8,6 @@ passport.use('local.signin', new LocalStrategy({
     passwordField: 'contrasena',
     passReqToCallback: true
 }, async( req, correo, contrasena, done ) => {
-  
     const fila = await db.query('SELECT * FROM usuarios WHERE correo = ?',[correo]);
     if (fila.length > 0){
         const user = fila[0];
@@ -35,7 +34,7 @@ passport.use('local.signup', new LocalStrategy({
      nombre: req.body.nombre,
      apellidop: req.body.apellidop,
      apellidom: req.body.apellidom,
-     contrasena
+     contrasena 
  };
     nuevoUsuario.contrasena = await helpers.encriptar(contrasena)
     const result = await db.query ('INSERT INTO usuarios SET ?',[nuevoUsuario]);
