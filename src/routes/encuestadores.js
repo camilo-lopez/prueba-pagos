@@ -3,6 +3,13 @@ const router = express.Router();
 const { isLoggedIn } = require ('../lib/auth');
 const db = require('../database');
 
+router.get('/showuser/:id', async (req, res) => {
+    const {id} =  req.params;
+    const usuario = await db.query ('SELECT * FROM usuarios WHERE id = ?',[id]);
+    console.log(usuario)
+    res.render('encuestadores/show', {usuario:usuario[0]})
+});
+
 router.get('/encuestadores', async (req, res) => {
     const encuestadores = await db.query ('SELECT * FROM usuarios');
     res.render('encuestadores/list', {encuestadores})

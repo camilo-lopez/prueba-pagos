@@ -6,6 +6,15 @@ const LocalStrategy = require('passport-local').Strategy;
 const { isLoggedIn } = require ('../lib/auth');
 const db = require('../database');
 
+router.get('/adminshow/:id', async (req,res) => {
+    const {id} = req.params
+    const pago = await db.query('SELECT * FROM pago WHERE id = ?',[id])
+    const proyecto = await db.query('SELECT * FROM proyecto WHERE id = ?',[pago[0].idproyecto]) 
+    const usuario = await db.query('SELECT * FROM usuarios WHERE rut = ?',[pago[0].rut]) 
+    res.render('pagos/showadmin', {pago:pago[0], proyecto:proyecto[0], usuario:usuario[0]})
+    
+})
+
 router.get('/show/:id', async (req,res) => {
     const {id} = req.params
     const pago = await db.query('SELECT * FROM pago WHERE id = ?',[id])

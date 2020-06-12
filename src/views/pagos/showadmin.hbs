@@ -1,7 +1,7 @@
 <div class="row p-5">
     <div class="col-md-5 mx-auto">
         <div class=" text-center">
-            <h2>Detalle de pago</h2>
+            <h2>Detalle de pago de encuestador {{usuario.nombre}} {{usuario.apellidop}}</h2>
             <div class="card-body">
                 <table class="table table-hover show-table">
                      <tbody>
@@ -9,9 +9,17 @@
                             <td style="text-align:left">ID: </td> 
                             <td style="text-align:left "><b>{{pago.id}}</b></td>            
                         </tr>
+                           <tr>
+                            <td style="text-align:left">Encuestador: </td> 
+                            <td style="text-align:left "><a href="/showuser/{{usuario.id}}"><b>{{usuario.nombre}} {{usuario.apellidop}} </b></a></td>            
+                        </tr>
                         <tr>
                             <td style="text-align:left">Región: </td>
                             <td style="text-align:left"><b>{{pago.region}}</b></td>    
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Proyecto: </td>
+                            <td style="text-align:left"><b>{{proyecto.nombre}}</b></td>    
                         </tr>
                         <tr>
                             <td style="text-align:left">Item: </td>

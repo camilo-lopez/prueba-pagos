@@ -1,0 +1,44 @@
+<div class="row p-5">
+    <div class="col-md-5 mx-auto">
+        <div class="text-center">
+            <h2>Detalle del usuario {{usuario.nombre}}</h2>
+            <div >
+                <table class="table table-hover show-table">
+                     <tbody>
+                        <tr>
+                            <td style="text-align:left">ID: </td> 
+                            <td style="text-align:left "><b>{{usuario.id}}</b></td>            
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Rut: </td>
+                            <td style="text-align:left"><b>{{usuario.rut}}</b></td>    
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Nombre: </td>
+                            <td style="text-align:left"><b>{{usuario.nombre}}</b></td>    
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Apellido Paterno: </td>
+                            <td style="text-align:left"><b>{{usuario.apellidop}}</b></td>    
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Apellido Materno: </td>
+                            <td style="text-align:left"><b>{{usuario.apellidom}}</b></td>    
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Correo: </td>
+                            <td style="text-align:left"><b>{{usuario.correo}}</b></td>    
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                 <button class="btn btn-outline-primary" onclick="goBack()">  Volver  </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

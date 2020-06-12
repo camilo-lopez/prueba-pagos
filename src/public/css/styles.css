@@ -1,7 +1,7 @@
 .icon {
     margin-left: 2px;
     margin-right: 2px;
-    color: #0a038a;
+    color: #0043ff;
 }
 
 .column {
@@ -9,7 +9,7 @@
 }
 /* Color de la barra de la tabla */
 .breadcrumb {
-    background-color: #0a038a;
+    background-color: #17a2b8;
 }
 
 .breadcrumb-item.active {
@@ -42,7 +42,7 @@
 
 /*  ESTILO DE TABLAS "SHOW"  */
 .show-table {
-    width: 250px;
+    /*width: 250px;*/
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
   }
