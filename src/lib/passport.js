@@ -27,6 +27,8 @@ passport.use('local.signup', new LocalStrategy({
     usernameField: 'correo',
     passwordField: 'contrasena',
     passReqToCallback: true
+   
+    
 }, async (req, correo, contrasena, done) => {
  const nuevoUsuario = {
      rut : req.body.rut,
@@ -36,10 +38,16 @@ passport.use('local.signup', new LocalStrategy({
      apellidom: req.body.apellidom,
      contrasena 
  };
+    const existe = await db.query ('SELECT * FROM usuarios WHERE rut = ? OR correo = ? ',[nuevoUsuario.rut, correo]);
+    if(existe.length <= 0 ){
     nuevoUsuario.contrasena = await helpers.encriptar(contrasena)
     const result = await db.query ('INSERT INTO usuarios SET ?',[nuevoUsuario]);
     nuevoUsuario.id = result.insertId;
     return done(null, nuevoUsuario);
+    
+}else{
+    done(null, false, req.flash('message','Correo o rut ya registrados!'));
+}
 }));
 
 passport.serializeUser((user, done) => {

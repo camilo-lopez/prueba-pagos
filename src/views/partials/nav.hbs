@@ -1,28 +1,62 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+
   <div class="container">
-    <a class="navbar-brand" href="/">DATAVOZ</a>
+    <div class="float-left">
+    <a  href="/pagos" class="float-left" id="logo"><img src="../imagenes/logo-normal-color.png"  /></a>
+    </div>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      
       {{#if user}}
       <li class="nav-item active">
-        <a class="nav-link" href="/pagos">Pagos <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/pagos">Pagos</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+       <div name="admin" class="admin" style="display: none;">
+        <li class="nav-item ">
+        <a class="nav-link" href="/encuestadores">Encuestadores </a>
       </li>
+      </div>
+      <div name="admin" class="admin" style="display: none;">
+      <li class="nav-item ">
+        <a class="nav-link" href="/addexcel">Agregar pagos </a>
+      </li>
+      </div>
+       <div name="admin" class="admin" style="display: none;">
+      <li class="nav-item ">
+        <a class="nav-link" href="/proyecto">Proyectos </a>
+      </li>
+      </div>
       <li class="nav-item">
         <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">Cerrar sesion</a>
-      </li>   
+      </li>
+      <input type="text" name="rol" hidden="hidden" id="rol" value="{{user.rolid}}"/>
+     
   {{else}}
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" href="/login">Iniciar Sesion</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" href="/signup">Crear Usuario</a>
       </li>
 {{/if}}
+
+
   </ul>
   </div>
   </div>
 </nav>
+
+<script>
+   $(document).ready(function(){
+     const rol = $("#rol").val();
+    if(rol == 1 ){
+    $(".admin").removeAttr( 'style' );
+    $("#logo").attr('href','/pagos/allpagos');
+    }else{
+
+    }
+   })
+   
+</script>

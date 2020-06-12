@@ -10,11 +10,14 @@
                                ${{total}}
                             </h3>
                         </a>
-                        <p> {{item}}  </p>
-                        <a href="/pagos/delete/{{id}}" class=" btn btn-danger"> Eliminar </a>
-                        <a href="/pagos/edit/{{id}}" class=" btn btn-secondary"> Editar </a>
+                        <p>Item:  {{item}}  </p>
+                        <p> Valor Neto: {{neto}}  </p>
+                            <p> {{proyecto}}  </p>
+                        <a hidden href="/pagos/delete/{{id}}" class=" btn btn-danger"> Eliminar </a>
+                        <a hidden href="/pagos/edit/{{id}}" class=" btn btn-secondary"> Editar </a>
+                        <a href="/pagos/show/{{id}}" class=" btn btn-info" > Ver Detalle <i class="far fa-eye" style="color:white"></i></a>
                     </div>
-                </div>
+                </div><br>
             </div>
             {{else}}
             <div class="col-md-4 mx-auto">

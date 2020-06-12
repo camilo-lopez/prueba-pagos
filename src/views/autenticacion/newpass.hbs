@@ -31,8 +31,9 @@
 <script>
    $( document ).ready(() => {
        var url = $(location).attr('pathname');
-       var id = url.slice(27);
-     $('#form').attr('action', `/pagos/forgot_p4ssw0rd/new/${id}`);
+       var id = url.slice(21);
+       console.log(id)
+     $('#form').attr('action', `/forgot_p4ssw0rd/new/${id}`);
 })
  function coincidePassword() {
     const val1 = $("#contrasena").val();

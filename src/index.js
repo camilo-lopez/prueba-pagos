@@ -43,6 +43,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+
 //Variables globales
 app.use((req, res, next)=>{
     app.locals.success = req.flash('success');
@@ -57,6 +58,9 @@ app.use(require('./routes/'));
 app.use(require('./routes/authentication'));
 app.use('/pagos', require('./routes/pagos'));
 app.use(require('./routes/proyectos'))
+app.use(require('./routes/addexcel'))
+app.use(require('./routes/encuestadores'))
+
 
 //Public
 app.use(express.static(path.join(__dirname, 'public')))

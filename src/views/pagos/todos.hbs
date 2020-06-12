@@ -1,0 +1,48 @@
+<div class="containter p-4">
+   
+  
+     <div class="panel panel-info">
+                <div class="panel-heading">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb secondary-color">
+                            <li class="breadcrumb-item active">
+                              <h2>Pagos</h2>
+                            </li>
+                            
+                        </ol>
+                    </nav>
+                </div>
+        </div>
+                <div class="wrapper-editor dataTable_wrapper table-responsive col-lg-12">
+                    <div class="panel-body border border-secondary col-lg-12 ">
+                        
+  <table id="tableResult" class="table table-striped display" cellspacing="0" width="100%">
+  
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Encuestador</th>
+      <th scope="col">Región</th>
+      <th scope="col">Proyecto</th>
+      <th scope="col">Valor encuesta</th>
+      <th scope="col">N° Encuestas</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each allpagos}}
+    <tr>
+      <th>{{pagoid}}</th>
+      <td>{{nombre}} {{apellidop}}</td>
+      <td>{{region}}</td>
+      <td>{{idproyecto}}</td>
+      <td>{{valorencuesta}}</td>
+      <td>{{numeroencuesta}}</td>
+      <td><i class="fas fa-pencil-alt"></i> <i class="far fa-times-circle"></i><i class="far fa-eye"></i> </td>
+    </tr>
+    
+    {{/each}}
+  </tbody>
+</table></div></div>
+</div>
+       

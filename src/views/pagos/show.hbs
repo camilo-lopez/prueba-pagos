@@ -1,0 +1,51 @@
+<div class="row p-5">
+    <div class="col-md-5 mx-auto">
+        <div class="card text-center">
+            <h2>Detalle de pago</h2>
+            <div class="card-body">
+                <table class="table table-hover show-table">
+                     <tbody>
+                        <tr>
+                            <td style="text-align:left">ID: </td> 
+                            <td style="text-align:left "><b>{{pago.id}}</b></td>            
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Región: </td>
+                            <td style="text-align:left"><b>{{pago.region}}</b></td>    
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Item: </td>
+                            <td style="text-align:left"><b>{{pago.item}}</b></td>    
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Número de encuestas: </td>
+                            <td style="text-align:left"><b>{{pago.numeroencuesta}}</b></td>    
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Valor de la encuesta: </td>
+                            <td style="text-align:left"><b>${{pago.valorencuesta}}</b></td>    
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Bruto: </td>
+                            <td style="text-align:left"><b>${{pago.bruto}}</b></td>    
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Impuesto: </td>
+                            <td style="text-align:left"><b>${{pago.impuesto}}</b></td>    
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Total a pagar: </td>
+                            <td style="text-align:left"><b>${{pago.totalpagar}}</b></td>    
+                        </tr>
+                    </tbody>
+                </table>
+                 <button class="btn btn-outline-primary" onclick="goBack()">  Volver  </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

@@ -3,7 +3,8 @@
         <div class="col-md-4 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form action="/pagos/add" method="POST">
+                    <form action="/pagos/add/{{usuario.id}}" method="POST">
+                    {{log usuario.id}}
                         <div class="form-group">
                             <input type="text" class="form-control" name="region" placeholder="Región" />
                         </div>
@@ -57,12 +58,16 @@
         var nvencuesta = parseInt (vencuesta);
         var nnencuesta = parseInt (nencuesta);
         total = (nvencuesta * nnencuesta);
+        
         $("#total").val(total);
         $("#bruto").val(total);
-        var neto = 0;
-        neto = (total * 10.75)/100
+        var netodecimal = 0;
+
+        netodecimal = (total * 10.75)/100
+        var neto = Math.round(netodecimal);
         $("#impuesto").val(neto);
-        var totalpagar = (total - neto);  
+        var totalpagardecimal = (total - neto);  
+        var totalpagar = Math.round(totalpagardecimal);
         $("#neto").val(totalpagar);
         $("#totalPagar").val(totalpagar);
     }
